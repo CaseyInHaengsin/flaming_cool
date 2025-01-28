@@ -20,8 +20,9 @@ if System.get_env("PHX_SERVER") do
   config :flaming_cool, FlamingCoolWeb.Endpoint, server: true
 end
 
+config :flame, :backend, FLAME.FlyBackend
+
 if System.get_env("FLY_API_TOKEN") do
-  config :flame, :backend, FLAME.FlyBackend
   config :flame, FLAME.FlyBackend, token: System.fetch_env!("FLY_API_TOKEN")
 end
 
